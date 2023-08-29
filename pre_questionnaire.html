@@ -178,16 +178,13 @@
         <div class=" preContainer" id="pre_container">
             <form class="needs-validation" novalidate id="demo_form">
                 <div class="form-group column">
-                    <label for="q1Select" class="col-lg-12 col-m-12 col-sm-12 col-form-label"><b>Q1. How many products
-                            do you buy online per month?
+                    <label for="q1Select" class="col-lg-12 col-m-12 col-sm-12 col-form-label"><b>Q1. Are you an adult over 18 years old?
                         </b></label>
                     <div class="col-lg-12 col-m-12 col-sm-12">
                         <select class="form-control" id="q1Select" required>
-                            <option value="">Pick an option</option>
-                            <option value="0">I have never purchased anything online</option>
-                            <option value="1">1 to 5 products</option>
-                            <option value="2">6 to 10 products</option>
-                            <option value="3">More than 10 products</option>
+                            <option value="">Please select an option</option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
                         </select>
                         <div class="invalidFeedback" id="q1Feedback">
                         </div>
@@ -195,17 +192,13 @@
                 </div>
 
                 <div class="form-group column">
-                    <label for="q2Select" class="col-lg-12 col-m-12 col-sm-12 col-form-label"><b>Q2. Recall a time when
-                            you bought a product online which was important to you. How many different products did you
-                            browse before deciding what to buy?
+                    <label for="q2Select" class="col-lg-12 col-m-12 col-sm-12 col-form-label"><b>Q2. Are you a primary caregiver (legal guardian) of a child?
                         </b></label>
                     <div class="col-lg-12 col-m-12 col-sm-12">
                         <select class="form-control" id="q2Select" required>
-                            <option value="">Pick an option</option>
-                            <option value="0">I have never purchased anything online</option>
-                            <option value="1">1 to 5 products</option>
-                            <option value="2">6 to 10 products</option>
-                            <option value="3">More than 10 products</option>
+                            <option value="">Please select an option</option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
                         </select>
                         <div class="invalidFeedback" id="q2Feedback">
                         </div>
@@ -213,56 +206,65 @@
                 </div>
 
                 <div class="form-group column">
-                    <label for="q3Select" class="col-lg-12 col-m-12 col-sm-12 col-form-label"><b>Q3. Recall a time when
-                            you bought a product online which was important to you. Did you read user reviews of
-                            products before deciding to buy that product?</b></label>
+                    <label for="q3Select" class="col-lg-12 col-m-12 col-sm-12 col-form-label"><b>Q3. Does the child you care for has an autism diagnosis?</b></label>
                     <div class="col-lg-12 col-m-12 col-sm-12">
                         <select class="form-control" id="q3Select" required>
                             <option value="">Please select an option</option>
-                            <option>No</option>
                             <option>Yes</option>
+                            <option>No</option>
                         </select>
                         <div class="invalidFeedback" id="q3SelectFeedback">
                         </div>
                     </div>
                 </div>
 
-                <div class="form-group column" id="q3YesTime" style="display: none">
-                    <label for="q3YesTimeSelect" class="col-lg-12 col-m-12 col-sm-12 col-form-label"><b>How long did you
-                            spend reading user reviews before deciding to buy the product?</b></label>
+                <div class="form-group column">
+                    <label for="q3Select" class="col-lg-12 col-m-12 col-sm-12 col-form-label"><b>Q4. Is the child you care for between 11-17 years old?</b></label>
                     <div class="col-lg-12 col-m-12 col-sm-12">
-                        <select class="form-control" id="q3YesTimeSelect" required>
-                            <option value="">Pick an option</option>
-                            <option value="0">Less than 10 minutes</option>
-                            <option value="1">10 to 20 minutes</option>
-                            <option value="2">20 to 30 minutes</option>
-                            <option value="3">More than 30 minutes</option>
+                        <select class="form-control" id="q3Select" required>
+                            <option value="">Please select an option</option>
+                            <option>Yes</option>
+                            <option>No</option>
                         </select>
-                        <div class="invalidFeedback" id="q3YesTimeFeedback">
+                        <div class="invalidFeedback" id="q3SelectFeedback">
                         </div>
                     </div>
                 </div>
 
-                <div class="form-group column" id="q3YesDecision" style="display: none">
-                    <label for="q3YesDecisionSelect" class="col-lg-12 col-m-12 col-sm-12 col-form-label"><b>How would
-                            you say you read the user reviews?</b></label>
+                <!-- open ended question-->
+                <div class="form-group column">
+                    <label for="q3Input" class="col-lg-12 col-m-12 col-sm-12 col-form-label"><b>Q5. How old is the child you care for?</b></label>
                     <div class="col-lg-12 col-m-12 col-sm-12">
-                        <select class="form-control" id="q3YesDecisionSelect" required>
-                            <option value="">Pick an option</option>
-                            <option value="0">Only read the negative reviews</option>
-                            <option value="1">Only read the positive reviews</option>
-                            <option value="2">Started with negative reviews and then read the positive ones</option>
-                            <option value="3">Started with positive reviews and then read the negative ones
-                            </option>
-                            <option value="4">Did not follow any particular order</option>
-                            <option value="5">Other strategy</option>
-                        </select>
-                        <div class="invalidFeedback" id="q3YesDecisionFeedback">
+                        <input type="text" class="form-control" id="q3Input" placeholder="Please enter your answer" required>
+                        <div class="invalidFeedback" id="q3InputFeedback">
                         </div>
                     </div>
                 </div>
 
-                <div class="form-group column" id="q3DecisionOther" style="display:none">
+                <div class="form-group column">
+                    <label for="raceSelect" class="col-lg-12 col-m-12 col-sm-12 col-form-label"><b>Q6. Which of the following best represents the race/ethnicity of the child you care for?</b></label>
+                    <div class="col-lg-12 col-m-12 col-sm-12">
+                        <select class="form-control" id="raceSelect" required>
+                            <option value="">Please select an option</option>
+                            <option>American Indian or Alaska Native</option>
+                            <option>Asian</option>
+                            <option>Black or African American</option>
+                            <option>Native Hawaiian or Other Pacific Islander</option>
+                            <option>White</option>
+                            <option>Hispanic</option>
+                            <option>Two or more races</option>
+                            <option>Prefer not to answer</option>
+                        </select>
+                        <div class="invalidFeedback" id="raceSelectFeedback">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <!-- <div class="form-group column" id="q3DecisionOther" style="display:none">
                     <div class="col-lg-12 col-m-12 col-sm-12">
                         <input type="text" class="form-control" id="q3DecisionOtherText" placeholder="" required>
                     </div>
@@ -437,7 +439,7 @@
                         <div class="invalidFeedback" id="q7TextFeedback">
                         </div>
                     </div>
-                </div>
+                </div> -->
             </form>
 
             <div style="display: flex; width: 100%; align-items: center; justify-content: center;">

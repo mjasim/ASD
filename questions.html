@@ -204,14 +204,14 @@
                 </b></label>
                 <div class="form-group column" id="q3">
                     <div class="col-lg-12 col-m-12 col-sm-12 d-flex justify-content-between">
-                        <button type="button" id= "red" class="btn btn-dark" style="background-color:red; width:75px; height: 75px;" ></button>
-                        <button type="button" id= "blue" class="btn btn-dark" style="background-color:blue; width:75px; height: 75px;" ></button>
-                        <button type="button" id= "green" class="btn btn-dark" style="background-color:green; width:75px; height: 75px;" ></button>
-                        <button type="button" id= "yellow" class="btn btn-dark" style="background-color:yellow; width:75px; height: 75px;" ></button>
-                        <button type="button" id= "pink" class="btn btn-dark" style="background-color:pink; width:75px; height: 75px;" ></button>
-                        <button type="button" id= "orange" class="btn btn-dark" style="background-color:orange; width:75px; height: 75px;" ></button>
-                        <button type="button" id= "violet" class="btn btn-dark" style="background-color:violet; width:75px; height: 75px;" ></button>
-                    </div>
+                        <button type="button" id= "red" class="btn btn-dark" style="background-color:#f05b61;; width:75px; height: 75px;" ></button>
+                        <button type="button" id= "orange" class="btn btn-dark" style="background-color:#f6923d; width:75px; height: 75px;" ></button>
+                        <button type="button" id= "yellow" class="btn btn-dark" style="background-color:#ffca05; width:75px; height: 75px;" ></button>
+                        <button type="button" id= "light green" class="btn btn-dark" style="background-color:#8ac650; width:75px; height: 75px;" ></button>
+                        <button type="button" id= "dark green" class="btn btn-dark" style="background-color:#00a551; width:75px; height: 75px;" ></button>
+                        <button type="button" id= "light blue" class="btn btn-dark" style="background-color:#0099cd; width:75px; height: 75px;" ></button>
+                        <button type="button" id= "blue" class="btn btn-dark" style="background-color:#2983c5; width:75px; height: 75px;" ></button>
+                        <button type="button" id= "purple" class="btn btn-dark" style="background-color:#8973b3; width:75px; height: 75px;" ></button></div>
                     <div class="invalidFeedback" id="q3Feedback"></div>
                 </div>
 
@@ -253,6 +253,7 @@
         window.location.reload()
         return false
     }
+
 </script>
 
 
@@ -277,7 +278,7 @@
 
     $(document).ready(function () {
         $('#proceed').click(function () {
-
+            
             localStorage.setItem("q1", validate_form("q1Text",
                     "q1Feedback",
                     "Please provide an answer"
@@ -288,7 +289,11 @@
                     "q2Feedback",
                     "Please provide an answer"
             ));
-            
+
+            localStorage.setItem("q3", validate_form("q3",
+                    "q3Feedback",
+                    "Please provide an answer"
+            ));
         });
     });
 
