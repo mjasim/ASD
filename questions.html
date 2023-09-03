@@ -179,8 +179,9 @@
             <form class="needs-validation" novalidate id="demo_form">
 
                 <div class="text-center">
-                    <img src="images/interface_options.png" class="rounded image-fludid" alt="..." style="max-width: 100%; padding:20px;">
-                  </div>
+                    <!-- THIS IS THE CENTER IMAGE -->
+                    <img id="questionImage" src="" class="rounded image-fluid" alt="..." style="max-width: 50%; padding: 20px;">
+                </div>
 
                 <label for="q1" class="col-lg-12 col-m-12 col-sm-12 col-form-label"><b>Q1. What does the picture make you feel?
                 </b></label>
@@ -204,6 +205,7 @@
                 </b></label>
                 <div class="form-group column" id="q3">
                     <div class="col-lg-12 col-m-12 col-sm-12 d-flex justify-content-between">
+                        <!-- /* add brown , gray, pink, purple (more pinkish purple), white, black, maroon */ -->
                         <button type="button" id= "red" class="btn btn-dark" style="background-color:#f05b61;; width:75px; height: 75px;" ></button>
                         <button type="button" id= "orange" class="btn btn-dark" style="background-color:#f6923d; width:75px; height: 75px;" ></button>
                         <button type="button" id= "yellow" class="btn btn-dark" style="background-color:#ffca05; width:75px; height: 75px;" ></button>
@@ -211,7 +213,7 @@
                         <button type="button" id= "dark green" class="btn btn-dark" style="background-color:#00a551; width:75px; height: 75px;" ></button>
                         <button type="button" id= "light blue" class="btn btn-dark" style="background-color:#0099cd; width:75px; height: 75px;" ></button>
                         <button type="button" id= "blue" class="btn btn-dark" style="background-color:#2983c5; width:75px; height: 75px;" ></button>
-                        <button type="button" id= "purple" class="btn btn-dark" style="background-color:#8973b3; width:75px; height: 75px;" ></button></div>
+                        <button type="button" id= "violet" class="btn btn-dark" style="background-color:#8973b3; width:75px; height: 75px;" ></button></div>
                     <div class="invalidFeedback" id="q3Feedback"></div>
                 </div>
 
@@ -258,7 +260,9 @@
 
 
 <script>
+    var images = 0;
     var x = "";
+    document.getElementById("questionImage").src = "comics/Annoy_-_Bug_Bite1024_1.jpg";
 
     function validate_form(formId, feedbackId, feedbackMessage) {
         var value = "";
@@ -270,32 +274,37 @@
             document.getElementById(feedbackId).innerHTML = '<i class="fa fa-info-circle" style="color:red"></i>' +
                 "\xa0" +
                 feedbackMessage;
-            console.log(formId)
+            // console.log(formId)
             x = x + 1;
         }
         return value;
     }
 
-    $(document).ready(function () {
-        $('#proceed').click(function () {
+    // $(document).ready(function () {
+    //     $('#proceed').click(function () {
             
-            localStorage.setItem("q1", validate_form("q1Text",
-                    "q1Feedback",
-                    "Please provide an answer test"
-            ));
+    //         localStorage.setItem("q1", validate_form("q1Text",
+    //                 "q1Feedback",
+    //                 "Please provide an answer test"
+    //         ));
 
 
-            localStorage.setItem("q2", validate_form("q2Text",
-                    "q2Feedback",
-                    "Please provide an answer"
-            ));
+    //         localStorage.setItem("q2", validate_form("q2Text",
+    //                 "q2Feedback",
+    //                 "Please provide an answer"
+    //         ));
 
-            localStorage.setItem("q3", validate_form("q3",
-                    "q3Feedback",
-                    "Please provide an answer"
-            ));
-        });
-    });
+    //         // localStorage.setItem("q3", validate_form("q3",
+    //         //         "q3Feedback",
+    //         //         "Please provide an answer"
+    //         // ));
+
+    //         if (x == 0) {
+    //             alert("clicked!")
+    //             // console.log(x)
+    //         }
+    //     });
+    // });
 
     $(document).ready(function () {
         $('#q1').change(function () {
@@ -308,5 +317,83 @@
             document.getElementById("q2Feedback").innerHTML = "";
         });
     });
+
+
+    $(document).ready(function () {
+    // Array of image file names
+    var imgURLS = [
+        "Annoyance_-_You_Dropped_Your_Favorite_Food1024_1.jpg",
+        "Anticipation_-_Waiting_To_Open_Birthday_Gift1024_1.jpg"
+        // Add more image URLs here
+    ];
+
+    var currentImageIndex = 0; // Initialize the current image index
+
+    $('#proceed').click(function () {
+        // Validate your form fields here
+        var q1Valid = validate_form("q1Text", "q1Feedback", "Please provide an answer");
+        var q2Valid = validate_form("q2Text", "q2Feedback", "Please provide an answer");
+
+        // Check if all form fields are valid
+        if (q1Valid && q2Valid) {
+            // Update the image if there are more images to display
+            if (currentImageIndex < imgURLS.length) {
+                imgURL = "comics/" + imgURLS[currentImageIndex];
+                document.getElementById("questionImage").src = imgURL;
+                currentImageIndex++; // Move to the next image
+                console.log("imageURL: " + imgURL);
+            } else {
+                // Handle the case when all images have been shown
+                alert("You have completed the questionnaire.");
+                // You can add further actions here, such as form submission
+            }
+        } else {
+            // Handle the case when the form is not valid
+            alert("Please complete all fields before proceeding.");
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+//     $(document).ready(function () {
+//     // Array of image file names
+//     var images = [
+//         "Annoy_-_Bug_Bite1024_1.jpg",
+//         "Annoyance_-_You_Dropped_Your_Favorite_Food1024_1.jpg"
+//         // Add more image file names here
+//     ];
+
+//     // Function to change the displayed image
+//     function changeImage() {
+//         var currentImageIndex = parseInt($("#currentImageIndex").val());
+//         print(currentImageIndex, images.length)
+
+//         if (currentImageIndex < images.length) {
+//             $("#questionImage").attr("src", "comics/" + images[currentImageIndex]);
+//             $("#currentImageIndex").val(currentImageIndex + 1);
+//         } else {
+//             // Handle the case when all images are shown
+//             alert("You have completed the questionnaire.");
+//             // Here, you can submit the form or take any other desired action.
+//         }
+//     }
+
+//     // Initial image load
+//     changeImage();
+
+//     $('#proceed').click(function () {
+//         // Handle form submission or validation here
+
+//         // Change the image when the "Next" button is clicked
+//         changeImage();
+//     });
+// });
 
 </script>
